@@ -1,1 +1,7 @@
-
+name: HubCore
+main: HubCore\HubCore
+version: 1.0.0
+api: 3.0.0, 4.0.0
+author: IceCruelStuff
+description: Adds /hub command to your PocketMine-MP server
+website: https://github.com/IceCruelStuff/HubCore
