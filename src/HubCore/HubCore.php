@@ -27,7 +27,7 @@ class HubCore extends PluginBase implements Listener{
 	}
 	
 	public function onEnable(){
-		$this->getLogger()->info("HubCore successfully loaded");
+		$this->getLogger()->info("HubCore has been loaded");
 		$this->getLogger()->info("HubCore activated");
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 	}
