@@ -16,6 +16,7 @@ use pocketmine\command\ConsoleCommandSender;
 use pocketmine\math\Vector3;
 
 class HubCore extends PluginBase implements Listener{
+	
 	public $prefix = "§7[§6System§7]";
 	public $error = "§7[§4ERROR§7]";
 	public $warn = "§7[§cWarn§7]";
@@ -28,7 +29,7 @@ class HubCore extends PluginBase implements Listener{
 	
 	public function onEnable(){
 		$this->getLogger()->info("HubCore has been loaded");
-		$this->getLogger()->info("HubCore activated");
+		$this->getLogger()->info("HubCore enabled");
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 	}
 	
@@ -51,11 +52,11 @@ class HubCore extends PluginBase implements Listener{
 		if($player->getLevel() === $default){
 			$event->getCause() === EntityDamageEvent::CAUSE_FALL;
 			$event->setCancelled();
-		}
-		else {
+		} else {
 			
 		}
 	}
+	
 	public function onHurt(EntityDamageEvent $eve){
 		$entity = $eve->getEntity();
 		$v = new Vector3($entity->getLevel()->getSpawnLocation()->getX(),$entity->getPosition()->getY(),$entity->getLevel()->getSpawnLocation()->getZ);

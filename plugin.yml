@@ -5,3 +5,14 @@ api: 3.0.0, 4.0.0
 author: IceCruelStuff
 description: Adds /hub command to your PocketMine-MP server
 website: https://github.com/IceCruelStuff/HubCore
+
+commands:
+ hub:
+  description: Teleport to hub
+  usage: "/hub"
+  permission: hub.command.hub
+  
+permissions:
+ hub.command.hub:
+  description: Allows you to teleport to hub
+  default: true
