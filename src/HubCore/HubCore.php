@@ -9,7 +9,6 @@ use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\event\Listener;
-use pocketmine\level\Position;
 use pocketmine\math\Vector3;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
@@ -64,7 +63,7 @@ class HubCore extends PluginBase implements Listener {
 		$v = new Vector3(
 			$entity->getLevel()->getSpawnLocation()->getX(), 
 			$entity->getPosition()->getY(), 
-			$entity->getLevel()->getSpawnLocation()->getZ,
+			$entity->getLevel()->getSpawnLocation()->getZ(),
 		);
 		$radius = $this->getServer()->getSpawnRadius();
 		if(($entity instanceof Player) && ($entity->getPosition()->distance($v) <= $radius)){
