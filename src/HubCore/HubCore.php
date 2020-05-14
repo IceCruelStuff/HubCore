@@ -1,6 +1,6 @@
 <?php
 
-namespace HubCore
+namespace HubCore;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandExecutor;
