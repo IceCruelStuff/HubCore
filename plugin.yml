@@ -11,7 +11,12 @@ commands:
         description: Teleport to hub
         usage: "/hub"
         permission: hub.command.hub
-  
+
+    lobby:
+        description: Teleport to lobby
+        usage: "/lobby"
+        permission: hub.command.hub
+
 permissions:
     hub.command.hub:
         description: Allows you to teleport to hub
