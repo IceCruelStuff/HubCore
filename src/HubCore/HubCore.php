@@ -5,7 +5,7 @@ namespace HubCore;
 use pocketmine\command\Command;
 use pocketmine\command\ConsoleCommandSender;
 use pocketmine\command\CommandExecutor;
-use pocketmine\command\CommandSender
+use pocketmine\command\CommandSender;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerDeathEvent;
