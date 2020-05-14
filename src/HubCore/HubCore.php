@@ -3,8 +3,9 @@
 namespace HubCore;
 
 use pocketmine\command\Command;
-use pocketmine\command\CommandExecutor;
 use pocketmine\command\ConsoleCommandSender;
+use pocketmine\command\CommandExecutor;
+use pocketmine\command\CommandSender
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerDeathEvent;
@@ -34,6 +35,21 @@ class HubCore extends PluginBase implements Listener {
 
 	public function onDisable() : void {
 		$this->getLogger()->info("HubCore has been disabled");
+	}
+
+	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool {
+		$spawnLocation = $this->getServer()->getDefaultLevel()->getSpawnLocation();
+		switch ($command->getName()) {
+			case "hub":
+			case "lobby":
+				if ($sender instanceof Player) {
+					$sender->getPlayer()->teleport($spawnLocation);
+				} else {
+					$sender->sendMessage(TextFormat::RED . "Please use this command in-game");
+				}
+				break;
+		}
+		return false;
 	}
 
 	public function onJoin(PlayerJoinEvent $join) {
