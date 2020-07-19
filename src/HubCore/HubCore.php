@@ -74,16 +74,16 @@ class HubCore extends PluginBase implements Listener {
 		}
 	}
 
-	public function onHurt(EntityDamageEvent $eve) {
-		$entity = $eve->getEntity();
-		$v = new Vector3(
+	public function onHurt(EntityDamageEvent $ev) {
+		$entity = $ev->getEntity();
+		$vector = new Vector3(
 			$entity->getLevel()->getSpawnLocation()->getX(), 
 			$entity->getPosition()->getY(), 
 			$entity->getLevel()->getSpawnLocation()->getZ(),
 		);
 		$radius = $this->getServer()->getSpawnRadius();
-		if(($entity instanceof Player) && ($entity->getPosition()->distance($v) <= $radius)){
-			$eve->setCancelled();
+		if(($entity instanceof Player) && ($entity->getPosition()->distance($vector) <= $radius)){
+			$ev->setCancelled();
 		}
 	}
 
