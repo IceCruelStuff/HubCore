@@ -1,6 +1,6 @@
 # HubCore
 
-[![Poggit](https://poggit.pmmp.io/ci.shield/IceCruelStuff/HubCommand/~)](https://poggit.pmmp.io/ci/IceCruelStuff/HubCommand/~)
+[![Poggit](https://poggit.pmmp.io/ci.shield/IceCruelStuff/HubCore/~)](https://poggit.pmmp.io/ci/IceCruelStuff/HubCore/~)
 
 A simple PocketMine-MP plugin that allows players to do `/hub`. You can download the plugin [here](https://github.com/IceCruelStuff/HubCore/releases).
 
