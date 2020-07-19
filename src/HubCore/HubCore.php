@@ -79,10 +79,10 @@ class HubCore extends PluginBase implements Listener {
 		$vector = new Vector3(
 			$entity->getLevel()->getSpawnLocation()->getX(), 
 			$entity->getPosition()->getY(), 
-			$entity->getLevel()->getSpawnLocation()->getZ(),
+			$entity->getLevel()->getSpawnLocation()->getZ()
 		);
 		$radius = $this->getServer()->getSpawnRadius();
-		if(($entity instanceof Player) && ($entity->getPosition()->distance($vector) <= $radius)){
+		if (($entity instanceof Player) && ($entity->getPosition()->distance($vector) <= $radius)) {
 			$ev->setCancelled();
 		}
 	}
