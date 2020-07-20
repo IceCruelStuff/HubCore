@@ -17,6 +17,11 @@ commands:
     usage: "/lobby"
     permission: hub.command
 
+  spawn:
+    description: Teleport to spawn
+    usage: "/spawn"
+    permission: hub.command
+
 permissions:
   hub.command:
     description: Allows you to teleport to hub
