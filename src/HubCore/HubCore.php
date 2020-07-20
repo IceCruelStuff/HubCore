@@ -43,7 +43,11 @@ class HubCore extends PluginBase implements Listener {
 			case "hub":
 			case "lobby":
 				if ($sender instanceof Player) {
-					$sender->getPlayer()->teleport($spawnLocation);
+					if ($sender->hasPermission("hub.command")) {
+						$sender->getPlayer()->teleport($spawnLocation);
+					} else {
+						$sender->sendMessage(TextFormat::RED . "You do not have permission to use this command");
+					}
 				} else {
 					$sender->sendMessage(TextFormat::RED . "Please use this command in-game");
 				}
