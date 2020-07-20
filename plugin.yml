@@ -1,23 +1,23 @@
 name: HubCore
 main: HubCore\HubCore
 version: 1.2
-api: 3.0.0, 4.0.0
+api: 3.14.0
 author: IceCruelStuff
 description: Adds /hub command to your PocketMine-MP server
 website: https://github.com/IceCruelStuff/HubCore
 
 commands:
-    hub:
-        description: Teleport to hub
-        usage: "/hub"
-        permission: hub.command.hub
+  hub:
+    description: Teleport to hub
+    usage: "/hub"
+    permission: hub.command
 
-    lobby:
-        description: Teleport to lobby
-        usage: "/lobby"
-        permission: hub.command.hub
+  lobby:
+    description: Teleport to lobby
+    usage: "/lobby"
+    permission: hub.command
 
 permissions:
-    hub.command.hub:
-        description: Allows you to teleport to hub
-        default: true
+  hub.command:
+    description: Allows you to teleport to hub
+    default: true
