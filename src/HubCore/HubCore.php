@@ -42,6 +42,7 @@ class HubCore extends PluginBase implements Listener {
 		switch ($command->getName()) {
 			case "hub":
 			case "lobby":
+			case "spawn":
 				if ($sender instanceof Player) {
 					if ($sender->hasPermission("hub.command")) {
 						$sender->getPlayer()->teleport($spawnLocation);
