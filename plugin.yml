@@ -22,7 +22,26 @@ commands:
     usage: "/spawn"
     permission: hub.command
 
+  sethub:
+    description: Set the hub
+    usage: "/sethub"
+    permission: hub.set
+
+  setlobby:
+    description: Set the lobby
+    usage: "/setlobby"
+    permission: hub.set
+
+  setspawn:
+    description: Set the spawn
+    usage: "/setspawn"
+    permission: hub.set
+
 permissions:
   hub.command:
     description: Allows you to teleport to hub
     default: true
+
+  hub.set:
+    description: Allows you to set the hub
+    default: op
