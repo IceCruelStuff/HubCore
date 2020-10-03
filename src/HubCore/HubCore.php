@@ -53,6 +53,27 @@ class HubCore extends PluginBase implements Listener {
 					$sender->sendMessage(TextFormat::RED . "Please use this command in-game");
 				}
 				break;
+			case "sethub":
+			case "setlobby":
+			case "setspawn":
+				if ($sender instanceof Player) {
+					if ($sender->hasPermission("hub.set")) {
+						$this->getServer()->setDefaultLevel($sender->getLevel());
+
+						$x = $sender->getX();
+						$y = $sender->getY();
+						$z = $sender->getZ();
+
+						$pos = new Vector3($x, $y, $z);
+						$pos->round();
+
+						$level = $sender->getServer()->getDefaultLevel();
+						$level->setSpawnLocation($pos);
+					}
+				} else {
+					$sender->sendMessage(TextFormat::RED . 'Please use this command in-game');
+				}
+				break;
 		}
 		return false;
 	}
