@@ -25,11 +25,11 @@ class HubCore extends PluginBase implements Listener {
 	public $report = "§7[§cREPORT§7]";
 
 	public function onLoad() : void {
-		$this->getLogger()->info("§7Loading HubCore...");
+		$this->getLogger()->info(TextFormat::AQUA . 'Loading HubCore...');
 	}
 
 	public function onEnable() : void {
-		$this->getLogger()->info("HubCore has been enabled");
+		$this->getLogger()->info(TextFormat::AQUA . 'HubCore has been enabled');
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 	}
 
@@ -47,10 +47,10 @@ class HubCore extends PluginBase implements Listener {
 					if ($sender->hasPermission("hub.command")) {
 						$sender->getPlayer()->teleport($spawnLocation);
 					} else {
-						$sender->sendMessage(TextFormat::RED . "You do not have permission to use this command");
+						$sender->sendMessage(TextFormat::RED . 'You do not have permission to use this command');
 					}
 				} else {
-					$sender->sendMessage(TextFormat::RED . "Please use this command in-game");
+					$sender->sendMessage(TextFormat::RED . 'Please use this command in-game');
 				}
 				break;
 			case "sethub":
@@ -85,7 +85,7 @@ class HubCore extends PluginBase implements Listener {
 	}
 
 	public function onPlayerDeath(PlayerDeathEvent $event) {
-		$event->setDeathMessage("You died");
+		$event->setDeathMessage('You died');
 		$player = $event->getPlayer();
 		$spawnLocation = $this->getServer()->getDefaultLevel()->getSpawnLocation();
 		$player->teleport($spawnLocation);
