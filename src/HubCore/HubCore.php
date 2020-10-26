@@ -34,7 +34,7 @@ class HubCore extends PluginBase implements Listener {
 	}
 
 	public function onDisable() : void {
-		$this->getLogger()->info("HubCore has been disabled");
+		$this->getLogger()->info(TextFormat::AQUA . 'HubCore has been disabled');
 	}
 
 	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool {
