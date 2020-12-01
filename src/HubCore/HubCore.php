@@ -41,47 +41,6 @@ class HubCore extends PluginBase implements Listener {
 		$this->getLogger()->info(TextFormat::AQUA . 'HubCore has been disabled');
 	}
 
-	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool {
-		$spawnLocation = $this->getServer()->getDefaultLevel()->getSpawnLocation();
-		switch ($command->getName()) {
-			case "hub":
-			case "lobby":
-			case "spawn":
-				if ($sender instanceof Player) {
-					if ($sender->hasPermission("hub.command")) {
-						$sender->getPlayer()->teleport($spawnLocation);
-					} else {
-						$sender->sendMessage(TextFormat::RED . 'You do not have permission to use this command');
-					}
-				} else {
-					$sender->sendMessage(TextFormat::RED . 'Please use this command in-game');
-				}
-				break;
-			case "sethub":
-			case "setlobby":
-			case "setspawn":
-				if ($sender instanceof Player) {
-					if ($sender->hasPermission("hub.set")) {
-						$this->getServer()->setDefaultLevel($sender->getLevel());
-
-						$x = $sender->getX();
-						$y = $sender->getY();
-						$z = $sender->getZ();
-
-						$pos = new Vector3($x, $y, $z);
-						$pos->round();
-
-						$level = $sender->getServer()->getDefaultLevel();
-						$level->setSpawnLocation($pos);
-					}
-				} else {
-					$sender->sendMessage(TextFormat::RED . 'Please use this command in-game');
-				}
-				break;
-		}
-		return false;
-	}
-
 	public function onJoin(PlayerJoinEvent $join) {
 		$player = $join->getPlayer();
 		$spawnLocation = $this->getServer()->getDefaultLevel()->getSpawnLocation();
