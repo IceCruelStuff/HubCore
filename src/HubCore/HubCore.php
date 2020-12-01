@@ -16,6 +16,7 @@ use pocketmine\utils\TextFormat;
 use pocketmine\Player;
 use pocketmine\Server;
 use HubCore\command\HubCommand;
+use HubCore\command\SetHubCommand;
 
 class HubCore extends PluginBase implements Listener {
 
@@ -33,6 +34,7 @@ class HubCore extends PluginBase implements Listener {
 		$this->getLogger()->info(TextFormat::AQUA . 'HubCore has been enabled');
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->getServer()->getCommandMap()->register("hub", new HubCommand($this));
+		$this->getServer()->getCommandMap()->register("sethub", new SetHubCommand($this));
 	}
 
 	public function onDisable() : void {
