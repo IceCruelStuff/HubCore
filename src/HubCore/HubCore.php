@@ -18,11 +18,11 @@ use pocketmine\Server;
 
 class HubCore extends PluginBase implements Listener {
 
-	public $prefix = "§7[§6System§7]";
-	public $error = "§7[§4ERROR§7]";
-	public $warn = "§7[§cWarn§7]";
-	public $warning = "§7[§eWarning§7]";
-	public $report = "§7[§cREPORT§7]";
+	public $prefix = TextFormat::GRAY . "[" . TextFormat::GOLD . "System" . TextFormat::GRAY . "]";
+	public $error = TextFormat::GRAY . "[" . TextFormat::DARK_RED . "ERROR" . TextFormat::GRAY . "]";
+	public $warn = TextFormat::GRAY . "[" . TextFormat::RED . "Warn" . TextFormat::GRAY . "]";
+	public $warning = TextFormat::GRAY . "[" . TextFormat::YELLOW . "Warning" . TextFormat::GRAY . "]";
+	public $report = TextFormat::GRAY . "[" . TextFormat::RED . "REPORT" . TextFormat::GRAY . "]";
 
 	public function onLoad() : void {
 		$this->getLogger()->info(TextFormat::AQUA . 'Loading HubCore...');
