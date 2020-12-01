@@ -34,7 +34,7 @@ class HubCommand extends Command implements PluginIdentifiableCommand {
 			return;
 		}
 
-		$spawnLocation = $this->getServer()->getDefaultLevel()->getSpawnLocation();
+		$spawnLocation = $this->plugin->getServer()->getDefaultLevel()->getSpawnLocation();
 		if ($sender instanceof Player) {
 			if (isset($args[0])) {
 				if ($this->plugin->getServer()->getPlayer($args[0])) {
