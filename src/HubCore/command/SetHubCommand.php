@@ -61,7 +61,7 @@ class SetHubCommand extends Command implements PluginIdentifiableCommand {
 				} else {
 					$sender->sendMessage(TextFormat::RED . "Please enter all three coordinates");
 				}
-			} else { // use player position if no coordinates we entered
+			} else { // use player position if no coordinates were entered
 				$this->plugin->getServer()->setDefaultLevel($sender->getLevel());
 
 				$x = $sender->getX();
