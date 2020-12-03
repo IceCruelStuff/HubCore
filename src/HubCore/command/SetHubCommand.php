@@ -20,7 +20,7 @@ class SetHubCommand extends Command implements PluginIdentifiableCommand {
 		parent::__construct(
 			"sethub",
 			"Set the hub",
-			"/sethub <x> <y> <z>",
+			"/sethub <x> <y> <z> <level>",
 			["setlobby", "setspawn"]
 		);
 		$this->setPermission("hub.set");
