@@ -27,18 +27,18 @@ class HubCore extends PluginBase implements Listener {
 	public $report = TextFormat::GRAY . "[" . TextFormat::RED . "REPORT" . TextFormat::GRAY . "]";
 
 	public function onLoad() : void {
-		$this->getLogger()->info(TextFormat::AQUA . 'Loading HubCore...');
+		// $this->getLogger()->info(TextFormat::AQUA . 'Loading HubCore...');
 	}
 
 	public function onEnable() : void {
-		$this->getLogger()->info(TextFormat::AQUA . 'HubCore has been enabled');
+		// $this->getLogger()->info(TextFormat::AQUA . 'HubCore has been enabled');
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		$this->getServer()->getCommandMap()->register("hub", new HubCommand($this));
 		$this->getServer()->getCommandMap()->register("sethub", new SetHubCommand($this));
 	}
 
 	public function onDisable() : void {
-		$this->getLogger()->info(TextFormat::AQUA . 'HubCore has been disabled');
+		// $this->getLogger()->info(TextFormat::AQUA . 'HubCore has been disabled');
 	}
 
 	public function onJoin(PlayerJoinEvent $join) {
