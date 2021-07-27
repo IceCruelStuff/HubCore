@@ -11,6 +11,7 @@ use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerDeathEvent;
 use pocketmine\event\Listener;
 use pocketmine\math\Vector3;
+use pocketmine\permission\Permission;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
 use pocketmine\Player;
@@ -33,6 +34,8 @@ class HubCore extends PluginBase implements Listener {
 	public function onEnable() : void {
 		// $this->getLogger()->info(TextFormat::AQUA . 'HubCore has been enabled');
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
+		$this->getServer()->getPluginManager()->addPermission(new Permission("hub.command", "Allows you to teleport to hub", Permission::DEFAULT_TRUE));
+		$this->getServer()->getPluginManager()->addPermission(new Permission("hub.set", "Allows you to set the hub", Permission::DEFAULT_OP));
 		$this->getServer()->getCommandMap()->register("hub", new HubCommand($this));
 		$this->getServer()->getCommandMap()->register("sethub", new SetHubCommand($this));
 	}
